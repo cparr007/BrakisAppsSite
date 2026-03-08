@@ -3,146 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support - Brakis Apps</title>
+  <title>Support — Brakis Apps</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-deep: #060a12;
+      --bg-surface: #0c1121;
+      --bg-card: #111827;
+      --blue-core: #2563eb;
+      --blue-light: #60a5fa;
+      --blue-glow: rgba(37, 99, 235, 0.12);
+      --text-primary: #e8e4dc;
+      --text-secondary: #8b8578;
+      --text-muted: #4a4640;
+      --border-subtle: rgba(255, 255, 255, 0.04);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Instrument Sans', sans-serif;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #1a1a1a;
-      color: #c8c0b0;
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
       line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
     }
     header {
-      background: #1a1a1a;
-      text-align: center;
-      padding: 40px 20px;
-      border-bottom: 1px solid #2a2a2a;
+      padding: 32px 48px;
+      border-bottom: 1px solid var(--border-subtle);
     }
     header a {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-primary);
       text-decoration: none;
-      color: #e0d8c8;
-      font-size: 2rem;
-      letter-spacing: 6px;
-      font-weight: 700;
     }
     .content {
-      max-width: 800px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 80px 24px;
     }
     h1 {
-      font-size: 2rem;
-      color: #e0d8c8;
-      margin-bottom: 30px;
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .intro {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+    .support-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px 28px;
+      margin-bottom: 8px;
+    }
+    .support-box svg {
+      color: var(--blue-light);
+      flex-shrink: 0;
+    }
+    .support-box a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .support-box a:hover { color: var(--blue-light); }
+    .response-time {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 56px;
+      margin-top: 12px;
     }
     h2 {
-      font-size: 1.3rem;
-      color: #e0d8c8;
-      margin-top: 36px;
-      margin-bottom: 12px;
-    }
-    p, li {
-      color: #a09880;
-      margin-bottom: 12px;
-    }
-    ul {
-      padding-left: 24px;
-      margin-bottom: 12px;
-    }
-    a { color: #4a90d9; text-decoration: none; }
-    a:hover { color: #6ab0f9; }
-    .support-email {
-      display: inline-block;
-      background: #252525;
-      border: 1px solid #333;
-      padding: 16px 32px;
-      border-radius: 6px;
-      margin: 20px 0;
-      font-size: 1.1rem;
-    }
-    .support-email a {
-      color: #e0d8c8;
-      font-weight: 600;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
     .faq-item {
-      background: #222;
-      border: 1px solid #2a2a2a;
-      border-radius: 8px;
-      padding: 24px;
-      margin-bottom: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 12px;
+      transition: border-color 0.25s;
+    }
+    .faq-item:hover {
+      border-color: rgba(255, 255, 255, 0.08);
     }
     .faq-item h3 {
-      color: #e0d8c8;
-      font-size: 1.05rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
       margin-bottom: 8px;
     }
     .faq-item p {
-      margin-bottom: 0;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #706858;
+      color: var(--text-secondary);
       font-size: 0.9rem;
-      border-top: 1px solid #2a2a2a;
+      margin: 0;
+      line-height: 1.7;
     }
-    .footer-links { margin-bottom: 16px; }
-    .footer-links a { color: #908878; margin: 0 16px; font-size: 0.9rem; }
-    .footer-links a:hover { color: #e0d8c8; }
+    .faq-item a { color: var(--blue-light); text-decoration: none; }
+    .faq-item a:hover { color: #93c5fd; }
+    a { color: var(--blue-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #93c5fd; }
+    footer {
+      padding: 48px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a { font-size: 0.8rem; color: var(--text-secondary); }
+    .footer-links a:hover { color: var(--text-primary); }
+    @media (max-width: 600px) {
+      header { padding: 24px; }
+      .content { padding: 48px 20px; }
+      .faq-item { padding: 20px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    }
   </style>
 </head>
 <body>
-
-  <header>
-    <a href="index.html">BRAKIS APPS</a>
-  </header>
-
+  <header><a href="index.html">Brakis Apps</a></header>
   <div class="content">
     <h1>Support</h1>
-    <p>We're here to help. If you're experiencing issues with any of our apps or have questions, please reach out.</p>
-
-    <div class="support-email">
+    <p class="intro">We're here to help. If you're experiencing an issue or have a question, reach out and we'll take care of it.</p>
+    <div class="support-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
       <a href="mailto:chris@BrakisApps.com">chris@BrakisApps.com</a>
     </div>
-
-    <p>We typically respond within 24-48 hours.</p>
+    <p class="response-time">We typically respond within 24–48 hours.</p>
 
     <h2>Frequently Asked Questions</h2>
-
     <div class="faq-item">
       <h3>Where is my data stored?</h3>
       <p>Your data is stored locally on your device. If you enable iCloud sync, a copy is also stored in your private iCloud account. We do not store your data on our servers.</p>
     </div>
-
     <div class="faq-item">
       <h3>How do I delete my data?</h3>
-      <p>You can delete individual items within the app, or uninstall the app to remove all local data. To remove iCloud data, go to Settings > Apple ID > iCloud > Manage Storage on your device.</p>
+      <p>You can delete individual items within the app, or uninstall the app to remove all local data. To remove iCloud data, go to Settings &gt; Apple ID &gt; iCloud &gt; Manage Storage on your device.</p>
     </div>
-
     <div class="faq-item">
       <h3>How do I request a refund?</h3>
       <p>All purchases are processed through the Apple App Store. To request a refund, visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> and sign in with your Apple ID.</p>
     </div>
-
     <div class="faq-item">
       <h3>Which devices are supported?</h3>
       <p>Our apps are designed for iPhone and require iOS 17.0 or later.</p>
     </div>
-
     <div class="faq-item">
       <h3>How do I report a bug?</h3>
-      <p>Please email us at <a href="mailto:chris@BrakisApps.com">chris@BrakisApps.com</a> with a description of the issue, the app name, your iOS version, and your device model. Screenshots are helpful.</p>
+      <p>Email us at <a href="mailto:chris@BrakisApps.com">chris@BrakisApps.com</a> with a description of the issue, the app name, your iOS version, and your device model. Screenshots are always helpful.</p>
     </div>
   </div>
-
   <footer>
+    <p class="footer-copy">&copy; 2026 Brakis Apps. All rights reserved.</p>
     <div class="footer-links">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-of-service.html">Terms of Service</a>
       <a href="support.html">Support</a>
     </div>
-    <p>Copyright &copy; 2026 Brakis Apps - All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
