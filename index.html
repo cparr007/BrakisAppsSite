@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brakis Apps — Thoughtfully Crafted iOS Apps</title>
-  <meta name="description" content="Brakis Apps builds powerful, beautifully designed iOS applications that enhance your daily workflow.">
-  <meta property="og:title" content="Brakis Apps">
-  <meta property="og:description" content="Thoughtfully crafted iOS apps that enhance your workflow.">
+  <title>BrakisApps — Purposeful iOS Apps</title>
+  <meta name="description" content="BrakisApps builds focused, native iOS applications designed around privacy. Your data belongs to you.">
+  <meta property="og:title" content="BrakisApps">
+  <meta property="og:description" content="Purposeful iOS apps. Your data belongs to you.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://brakisapps.com">
   <link rel="icon" type="image/png" href="logo.png">
@@ -87,8 +87,8 @@
     }
 
     .nav-brand {
-      font-family: var(--font-display);
-      font-weight: 800;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
       font-size: 1.1rem;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -220,11 +220,20 @@
     .hero-subtitle {
       font-size: 1.1rem;
       color: var(--text-secondary);
-      max-width: 400px;
+      max-width: 440px;
       margin-bottom: 40px;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeUp 0.8s 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .hero-cta {
@@ -242,9 +251,6 @@
       border-radius: 60px;
       background: rgba(255, 255, 255, 0.03);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       width: fit-content;
     }
 
@@ -253,6 +259,17 @@
       border-color: rgba(37, 99, 235, 0.3);
       transform: translateY(-1px);
       box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
+    }
+
+    .hero-cta-primary {
+      background: linear-gradient(135deg, var(--blue-core), #4f46e5);
+      border-color: transparent;
+    }
+
+    .hero-cta-primary:hover {
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      border-color: transparent;
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
     }
 
     .hero-cta svg {
@@ -271,13 +288,7 @@
       margin: 0 auto;
     }
 
-    /* ── Apps Section ── */
-    .apps {
-      padding: 120px 48px;
-      text-align: center;
-      position: relative;
-    }
-
+    /* ── Shared Section Styles ── */
     .section-label {
       font-family: var(--font-body);
       font-size: 0.7rem;
@@ -290,9 +301,9 @@
     }
 
     .section-title {
-      font-family: var(--font-display);
+      font-family: 'DM Sans', sans-serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text-primary);
       margin-bottom: 20px;
     }
@@ -304,18 +315,89 @@
       margin: 0 auto 60px;
     }
 
-    .coming-soon-card {
-      max-width: 560px;
+    /* ── Privacy Pillars ── */
+    .privacy-pillars {
+      padding: 120px 48px;
+      background: var(--bg-surface);
+      position: relative;
+    }
+
+    .privacy-pillars-inner {
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 64px 48px;
+    }
+
+    .privacy-pillars .section-title {
+      max-width: 500px;
+      line-height: 1.25;
+    }
+
+    .privacy-pillars .section-desc {
+      margin: 0 0 60px;
+      max-width: 620px;
+      text-align: left;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .pillar-number {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+
+    .pillar-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .pillar-body {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ── Apps Section ── */
+    .apps {
+      padding: 120px 48px;
+      position: relative;
+    }
+
+    .apps-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .apps .section-desc {
+      margin: 0 0 60px;
+      text-align: left;
+    }
+
+    .app-card {
+      padding: 48px;
       border-radius: 20px;
       background: linear-gradient(135deg, var(--bg-card), var(--bg-surface));
       border: 1px solid var(--border-subtle);
       position: relative;
       overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
     }
 
-    .coming-soon-card::before {
+    .app-card::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -328,50 +410,100 @@
       mask-composite: exclude;
     }
 
-    .coming-soon-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: var(--blue-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
+    .badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: 1px solid var(--border-hover);
+      padding: 6px 14px;
+      color: var(--text-secondary);
+      border-radius: 40px;
+      margin-bottom: 20px;
     }
 
-    .coming-soon-icon svg {
-      width: 24px;
-      height: 24px;
-      color: var(--blue-light);
-    }
-
-    .coming-soon-text {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
+    .app-card-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 12px;
+      margin-bottom: 6px;
     }
 
-    .coming-soon-sub {
+    .app-card-tagline {
+      color: var(--blue-light);
       font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .app-card-desc {
       color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
     }
 
-    .pulse-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: var(--blue-core);
-      border-radius: 50%;
-      margin-right: 10px;
-      vertical-align: middle;
-      animation: pulse 2s ease-in-out infinite;
+    .privacy-facts {
+      list-style: none;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-      50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+    .privacy-facts li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.6;
+    }
+
+    .privacy-facts li:last-child {
+      border-bottom: none;
+    }
+
+    .check {
+      color: var(--blue-light);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── About Section ── */
+    .about {
+      padding: 120px 48px;
+      position: relative;
+    }
+
+    .about-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about p {
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .about blockquote {
+      border-left: 2px solid var(--blue-light);
+      padding-left: 24px;
+      margin: 36px 0;
+      max-width: 600px;
+    }
+
+    .about blockquote p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.5;
     }
 
     /* ── Contact ── */
@@ -385,16 +517,33 @@
       margin: 0 auto;
     }
 
-    .contact-header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: start;
+    }
+
+    .contact-meta .section-desc {
+      margin: 0 0 32px;
+      text-align: left;
+    }
+
+    .contact-meta p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .contact-meta a {
+      color: var(--blue-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-meta a:hover {
+      color: #93c5fd;
     }
 
     .form-group {
@@ -461,51 +610,6 @@
     .submit-btn:hover {
       box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
       transform: translateY(-1px);
-    }
-
-    .contact-details {
-      padding-top: 8px;
-    }
-
-    .contact-details h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-    }
-
-    .contact-details p {
-      color: var(--text-secondary);
-      margin-bottom: 36px;
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-
-    .contact-company {
-      padding: 28px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-    }
-
-    .contact-company .name {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-    }
-
-    .contact-company a {
-      color: var(--blue-light);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    .contact-company a:hover {
-      color: #93c5fd;
     }
 
     /* ── Footer ── */
@@ -590,6 +694,22 @@
         margin-right: auto;
       }
 
+      .hero-ctas {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .app-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 36px;
+      }
+
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 48px;
@@ -603,7 +723,7 @@
         gap: 20px;
       }
 
-      .apps, .contact {
+      .apps, .contact, .privacy-pillars, .about {
         padding: 80px 24px;
       }
 
@@ -632,8 +752,8 @@
         display: none;
       }
 
-      .coming-soon-card {
-        padding: 48px 28px;
+      .app-card {
+        padding: 28px;
       }
 
       .footer-links {
@@ -648,9 +768,10 @@
 
   <!-- Navigation -->
   <nav id="nav">
-    <a href="#" class="nav-brand">Brakis Apps</a>
+    <a href="#" class="nav-brand">BrakisApps</a>
     <ul class="nav-links">
       <li><a href="#apps">Apps</a></li>
+      <li><a href="#about">Studio</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="support.html">Support</a></li>
     </ul>
@@ -659,18 +780,63 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-visual">
-      <img src="logo.png" alt="Brakis Apps" class="hero-logo">
+      <img src="logo.png" alt="BrakisApps" class="hero-logo">
     </div>
     <div class="hero-content">
-      <span class="hero-label">iOS Development Studio</span>
-      <h1 class="hero-title">Apps built with <em>craft</em> and purpose.</h1>
-      <p class="hero-subtitle">We design and build iOS applications that are thoughtful, intuitive, and made to enhance the way you work.</p>
-      <a href="#contact" class="hero-cta">
-        Get in Touch
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3.5 8h9M8.5 4l4 4-4 4"/>
-        </svg>
-      </a>
+      <span class="hero-label">Native iOS · Privacy First</span>
+      <h1 class="hero-title">Your data belongs to <em>you.</em> Not us.</h1>
+      <p class="hero-subtitle">BrakisApps builds focused, native iOS applications designed around a simple principle: software should work for you without collecting, tracking, or monetizing your personal information.</p>
+      <div class="hero-ctas">
+        <a href="#apps" class="hero-cta hero-cta-primary">
+          See What's Coming
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3.5 8h9M8.5 4l4 4-4 4"/>
+          </svg>
+        </a>
+        <a href="#contact" class="hero-cta">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Privacy Pillars -->
+  <section class="privacy-pillars" id="privacy">
+    <div class="privacy-pillars-inner">
+      <h2 class="section-title reveal">Privacy isn't a setting.<br>It's the foundation.</h2>
+      <p class="section-desc reveal reveal-delay-1">
+        Every app we ship is built from the ground up with privacy as a non-negotiable constraint —
+        not an afterthought added before launch. That means no analytics SDKs, no behavioral tracking,
+        and no third-party data sharing. What happens on your device stays on your device.
+      </p>
+      <div class="pillars-grid">
+        <div class="reveal reveal-delay-1">
+          <div class="pillar-number">Principle 01</div>
+          <div class="pillar-title">On-Device Processing</div>
+          <p class="pillar-body">
+            Compute-intensive features — OCR, image parsing, data extraction — run entirely
+            on your device using Apple's native frameworks. Your content never touches an external server.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="pillar-number">Principle 02</div>
+          <div class="pillar-title">No Hidden Data Pipeline</div>
+          <p class="pillar-body">
+            We do not embed analytics SDKs, ad networks, or crash reporters that phone home without
+            your knowledge. If we collect anything, it is explicit, minimal, and documented.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div class="pillar-number">Principle 03</div>
+          <div class="pillar-title">Sync on Your Terms</div>
+          <p class="pillar-body">
+            iCloud sync is opt-in and uses your personal iCloud account exclusively.
+            We have no access to synced data. Disable it at any time and everything stays local.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -678,18 +844,65 @@
 
   <!-- Apps -->
   <section class="apps" id="apps">
-    <span class="section-label reveal">What We're Building</span>
-    <h2 class="section-title reveal reveal-delay-1">Our Apps</h2>
-    <p class="section-desc reveal reveal-delay-2">We're putting the finishing touches on something we think you'll love.</p>
-    <div class="coming-soon-card reveal reveal-delay-3">
-      <div class="coming-soon-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-          <line x1="12" y1="18" x2="12.01" y2="18"/>
-        </svg>
+    <div class="apps-inner">
+      <span class="section-label reveal">Now in Development</span>
+      <h2 class="section-title reveal reveal-delay-1">Our Apps</h2>
+      <p class="section-desc reveal reveal-delay-2">
+        We build narrow, well-executed tools — apps that solve one problem with clarity and stay
+        out of your way. No feature bloat. No subscription to your attention.
+      </p>
+      <div class="app-card reveal reveal-delay-3">
+        <div>
+          <span class="badge">Launching Soon</span>
+          <div class="app-card-name">RecipeCast</div>
+          <p class="app-card-tagline">Scan any recipe. Scale it instantly. Keep it private.</p>
+          <p class="app-card-desc">
+            Point your camera at any recipe — a cookbook page, a handwritten card, a screenshot,
+            or a PDF — and RecipeCast extracts every ingredient and step automatically. Then scale
+            the recipe to any serving size in real time, with clean fractional quantities. Save
+            recipes to your library and optionally share collections with family via your own iCloud account.
+          </p>
+          <p class="app-card-desc">
+            No account required. No recipe database we own. No ads. Your kitchen, your data.
+          </p>
+        </div>
+        <div>
+          <ul class="privacy-facts">
+            <li><span class="check">✓</span> OCR runs on-device via Apple Vision — photos are never uploaded</li>
+            <li><span class="check">✓</span> No account or login required to use the app</li>
+            <li><span class="check">✓</span> iCloud sync uses your personal account — we cannot access it</li>
+            <li><span class="check">✓</span> No third-party analytics, trackers, or ad SDKs</li>
+            <li><span class="check">✓</span> Family sharing via native CloudKit — no BrakisApps server involved</li>
+            <li><span class="check">✓</span> Free tier available — no paywall to use the core feature</li>
+          </ul>
+        </div>
       </div>
-      <p class="coming-soon-text"><span class="pulse-dot"></span>Coming Soon</p>
-      <p class="coming-soon-sub">Stay tuned — our first apps are launching soon on the App Store.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <span class="section-label reveal">The Studio</span>
+      <h2 class="section-title reveal reveal-delay-1">What We Are</h2>
+      <p class="reveal reveal-delay-2">
+        BrakisApps is an independent iOS development studio. We are not a venture-backed startup
+        optimizing for growth metrics. We are not building platforms designed to lock you in.
+      </p>
+      <blockquote class="reveal reveal-delay-2">
+        <p>We build the apps we want to use — tools that respect the intelligence of the person holding the phone.</p>
+      </blockquote>
+      <p class="reveal reveal-delay-3">
+        Every app ships as a fully native SwiftUI application, built to Apple's frameworks and
+        standards. That means better performance, better accessibility, better privacy, and software
+        that feels at home on your device — not ported from somewhere else.
+      </p>
+      <p class="reveal reveal-delay-3">
+        Our development approach is deliberate. We take the time to get things right before
+        they reach the App Store. When something ships under the BrakisApps name, it is complete.
+      </p>
     </div>
   </section>
 
@@ -698,13 +911,22 @@
   <!-- Contact -->
   <section class="contact" id="contact">
     <div class="contact-inner">
-      <div class="contact-header">
-        <span class="section-label reveal">Reach Out</span>
-        <h2 class="section-title reveal reveal-delay-1">Contact Us</h2>
-        <p class="section-desc reveal reveal-delay-2">Have a question, idea, or just want to say hello? We'd love to hear from you.</p>
-      </div>
       <div class="contact-grid">
-        <form class="reveal" action="https://formspree.io/f/xplaceholder" method="POST">
+        <div class="contact-meta reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-desc">Questions about RecipeCast, our privacy practices, or just want to follow along? We read every message and respond personally — no automated replies.</p>
+          <p>
+            You can also reach us directly at<br>
+            <a href="mailto:chris@brakisapps.com">chris@brakisapps.com</a>
+          </p>
+          <br>
+          <p>
+            If you are a current user needing support, visit our
+            <a href="support.html">Support page</a> for documentation and known issues.
+          </p>
+        </div>
+        <form class="reveal reveal-delay-2" action="https://formspree.io/f/xplaceholder" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -715,25 +937,17 @@
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project or question..."></textarea>
+            <textarea id="message" name="message" placeholder="What's on your mind?"></textarea>
           </div>
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
-        <div class="contact-details reveal reveal-delay-2">
-          <h3>Questions or Comments?</h3>
-          <p>We know every project and question is unique. Send us a message and we'll get back to you soon.</p>
-          <div class="contact-company">
-            <p class="name">Brakis Apps</p>
-            <a href="mailto:chris@BrakisApps.com">chris@BrakisApps.com</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p class="footer-copy">&copy; 2026 Brakis Apps. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2026 BrakisApps. All rights reserved.</p>
     <div class="footer-links">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-of-service.html">Terms of Service</a>
